@@ -12,6 +12,12 @@ pipeline {
                 sh 'npm install'
             }
         }
+          stages {
+        stage('Clone') {
+            steps {
+                git 'https://github.com/devopscontent/node-demo.git'
+            }
+        }
 
     
 
