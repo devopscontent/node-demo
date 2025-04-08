@@ -6,20 +6,18 @@ pipeline {
         IMAGE_NAME = 'samintelli/node-app'
     }
 
-   
-        stage('Build') {
-            steps {
-                sh 'npm install'
-            }
-        }
-          stages {
+    stages {
         stage('Clone') {
             steps {
                 git 'https://github.com/devopscontent/node-demo.git'
             }
         }
 
-    
+        stage('Build') {
+            steps {
+                sh 'npm install'
+            }
+        }
 
         stage('Docker Build') {
             steps {
